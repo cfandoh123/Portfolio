@@ -1,0 +1,186 @@
+#about-me {
+    position: relative;
+    overflow: hidden;
+    background-image: url("../img/about_graphics/noise.png");
+    z-index: 0;
+}
+
+.graphic-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    width: 32%;
+    opacity: 0;
+}
+
+#cs-graphics  {
+    position: relative;
+    margin-top: 66px;
+    margin-left: 10%;
+    z-index: 1;
+}
+
+#life-graphics  {
+    position: absolute;
+    top: 169px;
+    right: 15%;
+    z-index: 1;
+}
+
+#boba  {
+    margin-bottom: 30px;
+}
+
+#about-me p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16pt;
+    width: 32%;
+    line-height: 1.4;
+    opacity: 0;
+}
+
+#cs-description {
+    position: relative;
+    margin-left: 10%;
+    margin-top: 70px;
+}
+
+#life-description {
+    position: absolute;
+    top: 310px;
+    right: 12%;
+}
+
+#dividing-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 250px;
+    top: 331px;
+    background: #c5c5c5;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    #life-graphics {
+        right: 18%;
+    }
+
+    #cs-graphics {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    #cs-graphics  {
+        position: relative;
+        margin: 0 auto;
+        width: 50%;
+        margin-top: 66px;
+    }
+
+    #life-graphics {
+        position: relative;
+        margin-left: 16.5%;
+        right: 0%;
+        top: 0%;
+        left: 0%;
+        width: 54%;
+        padding-top: 60px;
+    }
+
+    #about-me p {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 40px;
+    }
+
+    #life-description {
+        position: relative;
+        right: 0%;
+        top: 0%;
+    }
+
+    #dividing-line {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 610px) {
+
+    #cs-graphics {
+        width: 60%;
+    }
+
+    #life-graphics {
+        margin-left: 10%;
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #cs-graphics {
+        width: 80%;
+    }
+    
+    #about-me p {
+        font-size: 14pt;
+    }
+    #life-graphics {
+        width: 102.5%;
+        margin-left: -40px;
+    }
+
+    #cs-graphics img {
+        height: 70px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #life-graphics {
+        top: 190px;
+    }
+
+    #about-me p {
+        font-size: 24pt;
+    }
+
+    #computer-graphic {
+        width: 140px;
+    }
+
+    #website-graphic {
+        width: 150px;
+    }
+
+    #tennis-graphic {
+        width: 280px;
+    }
+
+    #cs-description {
+        margin-top: 90px;
+        padding-bottom: 40px;
+    }
+
+    #life-description {
+        top: 335px;
+    }
+
+    #dividing-line {
+        top: 335px;
+        width: 8px;
+    }
+}
+
+#particles-about {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow-y: hidden;
+}

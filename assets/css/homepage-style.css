@@ -1,0 +1,414 @@
+.smooth-scrolling {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../img/hero_graphics/hero_background_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 38%;
+    opacity: 0.7;
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+#logo {
+    position: relative;
+    margin-left: 7%;
+    margin-top: 24px;
+}
+
+#homepage p {
+    width: 50%;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    font-size: 40pt;
+    left: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Quicksand', sans-serif;
+}
+
+#social-media-links {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    left: 18%;
+    top: 80%;
+    padding-bottom: 10px;
+}
+
+.social-link {
+    width: 44px;
+}
+
+
+#mail {
+    width: 54px;
+}
+
+#page-navigation {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    right: 4.5%;
+    top: 28px;
+    height: 40px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12pt;
+}
+
+#page-navigation a {
+    text-decoration: none;
+    color: black;
+}
+
+.link-container {
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-line {
+    width: 1%;
+    opacity: 0;
+    height: 1px;
+    background: black;
+    transition-duration: 0.5s;
+}
+
+#hamburger-icon {
+    display: none;
+}
+
+@media screen and (min-width: 1000px) and (min-height: 1000px) {
+    #homepage p {
+        font-size: 48pt;
+        width: 60%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #homepage p {
+        font-size: 36pt;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    #social-media-links {
+        left: 5.25%;
+    }
+}
+@media screen and (max-width: 760px) {
+    #homepage p {
+        font-size: 36pt;
+        width: 65%;
+    }
+
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 800px) {
+    .hero:before {
+        background-position: 70% 40%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #homepage p {
+        top: 35%;
+        transform: translateY(-50%);
+        left: 7%;
+        
+        font-size: 32pt;
+        width: 80%;
+    }
+
+    #social-media-links  {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 82%;
+        width: 310px;
+        justify-content: space-between;
+    }
+
+    .hero:before {
+        background-position: 100% 0%;
+    }
+
+    #page-navigation {
+        display: none;
+    }
+
+    #hamburger-icon, #cancel-icon {
+        display: block;
+        position: absolute;
+        right: 7%;
+        top: 36px;
+        height: 40px;
+    }
+
+    #cancel-icon {
+        display: none;
+    }
+
+    #hamburger-icon:hover, #cancel-icon:hover {
+        cursor: pointer;
+    }
+
+}
+
+.menu {
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-image: url("../img/about_graphics/noise.png");
+    position: fixed;
+    left: 100%;
+    top: 0%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.closing-animation {
+    animation-name: left-right-closing;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;    
+}
+
+.opening-animation {
+    animation-name: right-left-opening;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.menu a {
+    font-family: 'Quicksand', 'sans-serif';
+    font-size: 20pt;
+    text-decoration: none;
+    margin-top: 10px;
+    color: black;
+    white-space: nowrap;
+}
+
+
+@keyframes left-right-closing {
+    from { 
+        opacity: 0.95;
+        width: 100%;
+        left: 0%;
+    }
+    to { 
+        opacity: 0;
+        width: 0%;
+        left: 100%; 
+    }
+}
+
+@keyframes right-left-opening {
+    from {
+        left: 100%;
+        width: 0%;
+        opacity: 0;
+    }
+    to {
+        left: 0%;
+        width: 100%;
+        opacity: 0.95;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #homepage p {
+        top: 50%;
+        left: 7%;
+        transform: translateY(-50%);
+        
+        font-size: 32pt;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #social-media-links {
+        width: 250px;
+    }
+
+    .social-link {
+        width: 36px;
+    }
+
+    #mail {
+        width: 44px;
+    }
+}
+
+@media screen and (max-height: 400px) and (min-width: 481px) {
+    #homepage p {
+        font-size: 28pt;
+    }
+
+    #social-media-links {
+        left: 5%;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    #page-navigation {
+        display: none;
+    }
+
+    #hamburger-icon, #cancel-icon {
+        display: block;
+        position: absolute;
+        right: 7%;
+        top: 36px;
+        height: 40px;
+    }
+
+    #cancel-icon {
+        display: none;
+    }
+
+    #hamburger-icon:hover, #cancel-icon:hover {
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-height: 350px) and (max-width: 480px) {
+    #homepage p {
+        top: 50%;
+    }
+}
+
+@media screen and (max-height: 280px) and (min-width: 480px) {
+
+    #homepage p {
+        top: 57.2%;
+        font-size: 24pt;
+        width: 64%;
+    }
+    #social-media-links  {
+        top: 82%;
+        left: 4.5%;
+    }
+
+    .social-link {
+        width: 40px;
+    }
+
+    #mail {
+        width: 48px;
+    }
+}
+
+@media screen and (max-height: 470px) and (max-width: 480px) {
+    #homepage p {
+        top: 50%;
+        font-size: 28pt;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #page-navigation {
+        width: 450px;
+        font-size: 20pt;
+    }
+
+    #homepage p {
+        font-size: 52pt;
+    }
+
+    #logo {
+        width: 100px;
+    }
+
+    #social-media-links {
+        width: 600px;
+        left: 14%;
+    }
+
+    .social-link {
+        width: 64px;
+    }
+
+    #mail {
+        width: 80px;
+    }
+
+    /*
+    makes the hover effect work because the lines are visible with the increased font size
+    of #page-navigation
+    */
+    .nav-line {
+        padding-bottom: 1px;
+    }
+
+    .link-container {
+        height: 50px;
+    }
+}
+
+@media screen and (min-width: 2100px) {
+    #homepage p {
+        font-size: 60pt;
+    }
+}
+
+
+/*if the device supports hovering capabilities*/
+@media (hover: hover) {
+    .link-container:hover .nav-line {
+        width: 100%;
+        opacity: 1;
+        transition-duration: 0.5s;
+    }
+}
+
+/*if one input form supports hovering but another doesnt (has mouse and is also touchscreen),
+remove the nav lines*/
+@media (any-hover: none) {
+    .link-container:hover .nav-line {
+        width: 1%;
+        opacity: 0;
+    }
+}
