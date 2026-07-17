@@ -76,7 +76,7 @@ html, body {
 }
 
 #page-navigation {
-    width: 300px;
+    width: 340px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -108,6 +108,27 @@ html, body {
     height: 1px;
     background: black;
     transition-duration: 0.5s;
+}
+
+#heart-link, #heart-link-hamburger {
+    line-height: 1;
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+#heart-link {
+    font-size: 14pt;
+}
+
+.menu-experience-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#heart-link-hamburger {
+    margin-left: 12px;
+    font-size: 16pt;
 }
 
 #hamburger-icon {
@@ -350,7 +371,11 @@ html, body {
 
 @media screen and (min-width: 1600px) {
     #page-navigation {
-        width: 450px;
+        width: 500px;
+        font-size: 20pt;
+    }
+
+    #heart-link {
         font-size: 20pt;
     }
 
@@ -401,6 +426,10 @@ html, body {
         width: 100%;
         opacity: 1;
         transition-duration: 0.5s;
+    }
+
+    #heart-link:hover, #heart-link-hamburger:hover {
+        transform: scale(1.3);
     }
 }
 

@@ -1,0 +1,363 @@
+:root {
+    --rose: #d9536f;
+    --rose-deep: #a83251;
+    --blush: #fff6f4;
+    --ink: #3f2f30;
+    --paper: #fffdfb;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(160deg, #fdf6f2 0%, #fbeae8 52%, #f4e7ec 100%);
+    font-family: 'Quicksand', sans-serif;
+    color: var(--ink);
+}
+
+/* Same noise texture the hamburger menu uses, to stay in the family */
+body:before {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/about_graphics/noise.png");
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+}
+
+section {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 24px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ---------- floating hearts ---------- */
+
+#floating-hearts {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -60px;
+    opacity: 0;
+    animation-name: float-up;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.32;
+    }
+    90% {
+        opacity: 0.18;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(28deg);
+        opacity: 0;
+    }
+}
+
+/* ---------- pin gate ---------- */
+
+.lock-heart {
+    font-size: 54pt;
+    line-height: 1;
+    animation-name: heartbeat;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.16); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.12); }
+    56% { transform: scale(1); }
+}
+
+#pin-gate h1 {
+    font-size: 26pt;
+    font-weight: 600;
+    margin: 22px 0px 6px 0px;
+    text-align: center;
+}
+
+.gate-subtext {
+    margin: 0px 0px 30px 0px;
+    font-size: 12pt;
+    font-weight: 500;
+    opacity: 0.65;
+    text-align: center;
+}
+
+.pin-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 14px;
+}
+
+.pin-digit {
+    width: 58px;
+    height: 68px;
+    border: 2px solid rgba(217, 83, 111, 0.28);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0px 4px 14px rgba(168, 50, 81, 0.08);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 24pt;
+    font-weight: 600;
+    color: var(--rose-deep);
+    text-align: center;
+    caret-color: var(--rose);
+    outline: none;
+    transition-duration: 0.25s;
+}
+
+.pin-digit:focus {
+    border-color: var(--rose);
+    background: #ffffff;
+    box-shadow: 0px 6px 20px rgba(168, 50, 81, 0.18);
+    transform: translateY(-2px);
+}
+
+.pin-digit.filled {
+    border-color: rgba(217, 83, 111, 0.6);
+}
+
+.pin-inputs.shake {
+    animation-name: shake;
+    animation-duration: 0.45s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0px); }
+    20% { transform: translateX(-9px); }
+    40% { transform: translateX(9px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+}
+
+#pin-error {
+    height: 18px;
+    margin: 14px 0px 0px 0px;
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--rose-deep);
+    text-align: center;
+    opacity: 0;
+    transition-duration: 0.25s;
+}
+
+#pin-error.visible {
+    opacity: 1;
+}
+
+#pin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pin-submit {
+    margin-top: 20px;
+    padding: 12px 44px;
+    border: none;
+    border-radius: 40px;
+    background: var(--rose);
+    box-shadow: 0px 6px 18px rgba(168, 50, 81, 0.28);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+
+#pin-submit:hover {
+    background: var(--rose-deep);
+    transform: translateY(-2px);
+    box-shadow: 0px 9px 22px rgba(168, 50, 81, 0.34);
+}
+
+/* ---------- letter ---------- */
+
+#letter.revealed {
+    animation-name: letter-in;
+    animation-duration: 0.9s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes letter-in {
+    from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.letter-paper {
+    width: 100%;
+    max-width: 660px;
+    padding: 58px 56px;
+    box-sizing: border-box;
+    background: var(--paper);
+    border-radius: 6px;
+    box-shadow: 0px 18px 50px rgba(120, 60, 75, 0.18);
+    /* faint ruled edge, like a real sheet */
+    border-left: 3px solid rgba(217, 83, 111, 0.35);
+}
+
+.letter-greeting {
+    margin: 0px 0px 24px 0px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28pt;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--rose-deep);
+}
+
+.letter-body p {
+    margin: 0px 0px 22px 0px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16pt;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.letter-signature {
+    margin: 36px 0px 0px 0px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21pt;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--rose-deep);
+}
+
+/* the letter settles in a line at a time, rather than all at once */
+#letter.revealed .letter-greeting,
+#letter.revealed .letter-body p,
+#letter.revealed .letter-signature {
+    opacity: 0;
+    animation-name: line-in;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+#letter.revealed .letter-greeting { animation-delay: 0.35s; }
+#letter.revealed .letter-body p:nth-child(1) { animation-delay: 0.75s; }
+#letter.revealed .letter-body p:nth-child(2) { animation-delay: 1.05s; }
+#letter.revealed .letter-body p:nth-child(3) { animation-delay: 1.35s; }
+#letter.revealed .letter-signature { animation-delay: 1.7s; }
+
+@keyframes line-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.back-link {
+    margin-top: 34px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 11pt;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--ink);
+    opacity: 0.55;
+    transition-duration: 0.25s;
+}
+
+.back-link:hover {
+    opacity: 1;
+    color: var(--rose-deep);
+}
+
+/* ---------- small screens ---------- */
+
+@media screen and (max-width: 600px) {
+    .lock-heart {
+        font-size: 44pt;
+    }
+
+    #pin-gate h1 {
+        font-size: 21pt;
+    }
+
+    .pin-inputs {
+        gap: 10px;
+    }
+
+    .pin-digit {
+        width: 48px;
+        height: 58px;
+        font-size: 20pt;
+    }
+
+    .letter-paper {
+        padding: 38px 28px;
+    }
+
+    .letter-greeting {
+        font-size: 23pt;
+    }
+
+    .letter-body p {
+        font-size: 14pt;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lock-heart, .floating-heart, #letter.revealed, .pin-inputs.shake {
+        animation: none;
+    }
+
+    /* no animation means no fade-in to land on, so the letter starts visible */
+    #letter.revealed .letter-greeting,
+    #letter.revealed .letter-body p,
+    #letter.revealed .letter-signature {
+        opacity: 1;
+        animation: none;
+    }
+}

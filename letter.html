@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>A Letter</title>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/letter-style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon_svg.svg">
+        <link rel="alternate icon" href="assets/img/favicon/favicon1_ico.ico">
+    </head>
+    <body>
+        <div id="floating-hearts"></div>
+
+        <section id="pin-gate">
+            <div class="lock-heart">❤️</div>
+            <h1>This one's locked</h1>
+            <p class="gate-subtext">Enter the 4-digit PIN to open the letter.</p>
+
+            <form id="pin-form" autocomplete="off">
+                <div class="pin-inputs" id="pin-inputs">
+                    <input class="pin-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="PIN digit 1">
+                    <input class="pin-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="PIN digit 2">
+                    <input class="pin-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="PIN digit 3">
+                    <input class="pin-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="PIN digit 4">
+                </div>
+                <p id="pin-error" role="alert"></p>
+                <button type="submit" id="pin-submit">Open</button>
+            </form>
+
+            <a href="index.html" class="back-link">&#8592; Back to portfolio</a>
+        </section>
+
+        <section id="letter" class="hidden">
+            <article class="letter-paper">
+                <h2 class="letter-greeting">Hey Yvonne,</h2>
+
+                <div class="letter-body">
+                    <p>
+                        I've been thinking a lot since everything happened. I know emotions were
+                        running really high, and I understand that you were really upset in that
+                        moment. I get why you wouldn't want to hear from me again, and I'm not
+                        trying to ignore or disrespect that.
+                    </p>
+                    <p>
+                        I just wanted to say that I honestly had more I wanted to say, and it
+                        didn't feel right leaving things the way they ended. I still care about
+                        you and about what we had, and if there's any part of you that wants to
+                        talk or try to work through things, I'm open to that. I believe some
+                        things are worth having at least one more conversation about even if they
+                        end up being left behind.
+                    </p>
+                    <p>
+                        If you don't feel the same way, I'll respect that. But I wanted you to
+                        know that my door is always open if you ever want to reply or talk. I
+                        truly wish you nothing but the best, no matter what happens.
+                    </p>
+                </div>
+
+                <p class="letter-signature">~ Calvin</p>
+            </article>
+
+            <a href="index.html" class="back-link">&#8592; Back to portfolio</a>
+        </section>
+
+        <script src="assets/js/letter.js"></script>
+    </body>
+</html>
