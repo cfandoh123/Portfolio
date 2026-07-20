@@ -1,5 +1,20 @@
 const CORRECT_PIN = "2002";
 
+// ----------------------------------------------------------------------------
+// Unlock notification (optional)
+//
+// Emails you whenever the correct PIN is entered, via Web3Forms (a free
+// form-to-email relay). To turn it on:
+//   1. Go to https://web3forms.com, enter your email (calvinandoh3@gmail.com),
+//      and it emails you an access key (a long string of letters/numbers).
+//   2. Paste that key between the quotes below, replacing PASTE_YOUR_KEY_HERE.
+// Leave it as-is to keep notifications OFF (nothing is sent).
+//
+// Note: this fires from the visitor's browser, so it can tell you the letter
+// was opened and when — but not reliably WHO opened it.
+// ----------------------------------------------------------------------------
+const WEB3FORMS_ACCESS_KEY = "533f7599-dbab-4ff5-94d3-89a9a7f19555";
+
 const pinGate = document.getElementById("pin-gate");
 const pinForm = document.getElementById("pin-form");
 const pinInputs = document.getElementById("pin-inputs");
@@ -100,6 +115,7 @@ function clearError() {
 
 function unlock() {
     clearError();
+    notifyUnlock();
     pinGate.style.transition = "opacity 0.5s, transform 0.5s";
     pinGate.style.opacity = "0";
     pinGate.style.transform = "scale(0.96)";
@@ -109,6 +125,50 @@ function unlock() {
         letter.classList.remove("hidden");
         letter.classList.add("revealed");
     }, 500);
+}
+
+let alreadyNotified = false;
+
+function readTimezone() {
+    try {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone || "unknown";
+    } catch (e) {
+        return "unknown";
+    }
+}
+
+// Fire-and-forget email when the letter is opened. Wrapped so that a missing
+// key, a blocked request, or an offline visitor can never break the unlock.
+function notifyUnlock() {
+    if (WEB3FORMS_ACCESS_KEY === "PASTE_YOUR_KEY_HERE" || alreadyNotified) {
+        return;
+    }
+    alreadyNotified = true;
+
+    const now = new Date();
+    // Context clues only — none of this identifies the visitor for certain.
+    const details = {
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: "Someone opened your letter 💌",
+        from_name: "Letter page",
+        opened_at: now.toLocaleString(),
+        timezone: readTimezone(),
+        language: navigator.language || "unknown",
+        device: navigator.userAgent,
+        screen: window.screen.width + "x" + window.screen.height,
+        note: "This confirms the correct PIN was entered. It does not verify who entered it."
+    };
+
+    try {
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(details),
+            keepalive: true
+        }).catch(() => {});
+    } catch (e) {
+        // never let a notification failure interrupt the reveal
+    }
 }
 
 // Background hearts, kept sparse and faint so they stay atmosphere, not confetti
