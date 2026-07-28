@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience · Calvin Andoh</title>
+    <meta name="description" content="Calvin Andoh's experience — 3× Google software engineering intern, fellowships (Uber, Jane Street, Palantir, Code2040), leadership, education and skills.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon_svg.svg">
+    <link rel="alternate icon" href="assets/img/favicon/favicon1_ico.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Quicksand:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        (function () {
+            document.documentElement.classList.add("js");
+            try {
+                var t = localStorage.getItem("theme");
+                if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                document.documentElement.setAttribute("data-theme", t);
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a class="brand" href="index.html">
+                <img src="assets/img/hero_graphics/solid/logo1.png" alt="Calvin Andoh logo">
+                <span>Calvin&nbsp;Andoh</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a class="navlink" href="index.html">Home</a>
+                <a class="navlink" href="about.html">About</a>
+                <a class="navlink active" href="experience.html">Experience</a>
+                <a class="navlink" href="projects.html">Projects</a>
+                <a class="btn btn-primary btn-sm btn-resume" href="Calvin_Andoh_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            </div>
+            <div class="nav-actions">
+                <a class="btn btn-primary btn-sm btn-resume" href="Calvin_Andoh_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="moon">🌙</span><span class="sun">☀️</span>
+                </button>
+                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero container">
+            <span class="eyebrow reveal">My journey so far</span>
+            <h1 class="reveal">Experience</h1>
+            <p class="section-lead reveal">Internships, fellowships, leadership, and the education behind it all.</p>
+        </section>
+
+        <!-- ===== Education ===== -->
+        <section class="container section" style="padding-top: 46px; padding-bottom: 0;">
+            <div class="section-head reveal"><span class="eyebrow">Education</span></div>
+            <article class="exp-card reveal">
+                <div class="exp-logo"><img src="assets/img/work_experience/Princeton.png" alt="Princeton University"></div>
+                <div>
+                    <div class="exp-head">
+                        <span class="exp-role">B.S.E. Electrical &amp; Computer Engineering</span>
+                        <span class="exp-date">2023 – 2027</span>
+                    </div>
+                    <div class="exp-org">Princeton University</div>
+                    <div class="exp-body">
+                        Minor in Computer Science.
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- ===== Experience tabs ===== -->
+        <section class="container section" style="padding-top: 48px;">
+            <div class="section-head reveal"><span class="eyebrow">Roles &amp; programs</span><h2 class="section-title">Where I've spent my time</h2></div>
+
+            <div class="tabs reveal" role="tablist">
+                <button class="tab active" data-tab="work" role="tab">Work</button>
+                <button class="tab" data-tab="programs" role="tab">Programs &amp; Fellowships</button>
+                <button class="tab" data-tab="leadership" role="tab">Leadership &amp; Community</button>
+            </div>
+
+            <!-- Work -->
+            <div class="tab-panel active" data-panel="work">
+                <div class="exp-list">
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/google.png" alt="Google"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Software Engineering Intern</span><span class="exp-date">May – Aug 2026</span></div>
+                            <div class="exp-org">Google · WearOS</div>
+                            <div class="exp-body"><ul>
+                                <li>Designed and implemented a cross-device transfer protocol for Wear OS smartwatches in Google Play Services, eliminating factory resets during phone upgrades.</li>
+                                <li>Developed gRPC APIs extending the Wear OS Companion SDK to securely transfer device states while maintaining background connectivity, and preserving parental safety features of kids' watches.</li>
+                            </ul></div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/google.png" alt="Google"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Software Engineering Intern</span><span class="exp-date">May – Aug 2025</span></div>
+                            <div class="exp-org">Google · Earth AI</div>
+                            <div class="exp-body"><ul>
+                                <li>Built an end-to-end AI slideshow-generation feature for Google Earth using the Gemini framework across three stacks — LLM (C++), backend (Kotlin) and frontend (Flutter).</li>
+                                <li>Extended the Earth AI agent with new tool code, system prompts and configs enabling slideshow generation over dynamic Google Search knowledge and Earth geometries.</li>
+                                <li>Optimized the agent's tooling, cutting error rates from 15% to 5% and resolving latency bottlenecks to improve reliability.</li>
+                            </ul></div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/google.png" alt="Google"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Software Engineering Intern</span><span class="exp-date">May – Aug 2024</span></div>
+                            <div class="exp-org">Google · Fitbit Collaborations</div>
+                            <div class="exp-body"><ul>
+                                <li>Integrated a scalable logging API to track user interactions in the Fitbit Android app across 5M+ users, driving UX research and an 80% increase in satisfaction metrics.</li>
+                                <li>Developed an auto-deletion system for shared images post-upload, optimizing storage and app performance on resource-constrained devices.</li>
+                            </ul></div>
+                        </div>
+                </div>
+            </div>
+
+            <!-- Programs & Fellowships -->
+            <div class="tab-panel" data-panel="programs">
+                <div class="exp-list">
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/uber.png" alt="Uber"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Engineering Fellow</span><span class="exp-date">Feb – May 2024</span></div>
+                            <div class="exp-org">Uber Career Prep</div>
+                            <div class="exp-body">Selected for the 2024 Uber Career Prep cohort, sharpening technical and professional skills through workshops and 1:1 industry mentorship.</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/palantir.svg" alt="Palantir"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Participant</span><span class="exp-date">Mar 2025</span></div>
+                            <div class="exp-org">Palantir Launch</div>
+                            <div class="exp-body">A one-week immersive insight program solving complex engineering problems in hands-on workshops and gaining exposure to enterprise-scale software development.</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/jpmc.png" alt="JPMorgan Chase"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Hacker</span><span class="exp-date">Oct 2025</span></div>
+                            <div class="exp-org">JPMC Code for Good</div>
+                            <div class="exp-body">Built a web platform for the Black Heart Association in 3 days — tracking patient health records, summarizing reports with the Gemini API, and mapping outreach with Google Maps (Clerk.js + Supabase).</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/janestreet.png" alt="Jane Street"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Fellow</span><span class="exp-date">May 2024</span></div>
+                            <div class="exp-org">Jane Street FOCUS</div>
+                            <div class="exp-body">Explored trading, software engineering and strategy &amp; product through classes and activities, with insight into Jane Street's work and interview processes.</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/code2040.png" alt="Code2040"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Student Fellow</span><span class="exp-date">Sep 2024 – Jun 2025</span></div>
+                            <div class="exp-org">Code2040 Fellowship</div>
+                            <div class="exp-body">One of 24 fellows nationwide advancing Black &amp; Latinx leadership in tech — 40+ hours of workshops on equity, leadership and product within a 6,000+ member community.</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/rsm.png" alt="RSM"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Scholar</span><span class="exp-date">Jul 2024</span></div>
+                            <div class="exp-org">RSM Excellence Academy</div>
+                            <div class="exp-body">A 3-day national leadership conference building technical and soft skills through real-world simulations and exposure to RSM's middle-market clients.</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/pwc.svg" alt="PwC"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Extern</span><span class="exp-date">Jan – Mar 2024</span></div>
+                            <div class="exp-org">PwC</div>
+                            <div class="exp-body">Applied strategic-consulting methods to real challenges facing a nonprofit partner — research, problem analysis, data gathering and impactful recommendations, mentored by PwC professionals.</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Leadership & Community -->
+            <div class="tab-panel" data-panel="leadership">
+                <div class="exp-list">
+                     </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/mcgraw.png" alt="McGraw Center"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Advanced Tutor</span><span class="exp-date">Sep 2024 – Present</span></div>
+                            <div class="exp-org">McGraw Center for Teaching &amp; Learning · Princeton</div>
+                            <div class="exp-body">Host study halls teaching 200+ students data structures &amp; algorithms, linear algebra, Calculus I–III, and physics (mechanics &amp; electromagnetism).</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <div class="exp-logo"><img src="assets/img/work_experience/campusrec.png" alt="Campus Recreation"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Student Staff &amp; Intramural Event Supervisor</span><span class="exp-date">Aug 2023 – Present</span></div>
+                            <div class="exp-org">Campus Recreation · Princeton</div>
+                            <div class="exp-body">Coordinate intramural events for 500+ participants with zero major incidents, acting as primary on-site contact for support staff and applying CPR &amp; risk-assessment training.</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <a class="exp-link" href="https://nsbe.princeton.edu/" target="_blank" rel="noopener" aria-label="NSBE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                        <div class="exp-logo"><img src="assets/img/work_experience/nsbe.png" alt="NSBE"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Website &amp; Gear Chair</span><span class="exp-date">2024 – Present</span></div>
+                            <div class="exp-org">National Society of Black Engineers · Princeton</div>
+                            <div class="exp-body">Manage the Princeton chapter website, design and coordinate member gear, and send quarterly newsletters.</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <a class="exp-link" href="https://www.colorstack.org/" target="_blank" rel="noopener" aria-label="ColorStack"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                        <div class="exp-logo"><img src="assets/img/work_experience/colorstack.png" alt="ColorStack"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Member</span><span class="exp-date">Jul 2023 – Present</span></div>
+                            <div class="exp-org">ColorStack</div>
+                            <div class="exp-body">Part of a community empowering underrepresented college students in tech: growing leadership and teamwork through group projects, workshops and a network of mentors.</div>
+                        </div>
+                    </article>
+                    <article class="exp-card reveal">
+                        <a class="exp-link" href="https://yafghana.org/" target="_blank" rel="noopener" aria-label="Young Achievers Foundation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                        <div class="exp-logo"><img src="assets/img/work_experience/yaf.png" alt="Young Achievers Foundation"></div>
+                        <div>
+                            <div class="exp-head"><span class="exp-role">Scholar</span><span class="exp-date">Mar 2022 – Mar 2023</span></div>
+                            <div class="exp-org">Young Achievers Foundation</div>
+                            <div class="exp-body">Empowered low-income, high-achieving students through leadership and community-service training, helping peers earn university scholarships.</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Skills ===== -->
+        <section class="container section" style="padding-top: 0;">
+            <div class="section-head reveal"><span class="eyebrow">Toolbox</span><h2 class="section-title">Skills &amp; coursework</h2></div>
+            <div class="grid grid-2">
+                <div class="card reveal">
+                    <h3 style="margin-bottom:16px;">Languages</h3>
+                    <div class="chip-group">
+                        <span class="chip">Java</span><span class="chip">Python</span><span class="chip">Go</span><span class="chip">Swift</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">RISC-V</span><span class="chip">x86 Assembly</span>
+                    </div>
+                    <h3 style="margin:26px 0 16px;">Frameworks &amp; tools</h3>
+                    <div class="chip-group">
+                        <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Flutter</span><span class="chip">SwiftUI</span><span class="chip">Redux</span><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">PostgreSQL</span><span class="chip">Firebase</span><span class="chip">Redis</span><span class="chip">NumPy</span><span class="chip">Pandas</span><span class="chip">Datadog</span><span class="chip">Git</span><span class="chip">Bash</span><span class="chip">XCTest</span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <h3 style="margin-bottom:16px;">Relevant coursework</h3>
+                    <div class="chip-group">
+                        <span class="chip"><b>COS 418</b> · Distributed Systems</span>
+                        <span class="chip"><b>COS 375</b> · Computer Architecture</span>
+                        <span class="chip"><b>COS 226</b> · Data Structures &amp; Algorithms</span>
+                        <span class="chip"><b>COS 217</b> · Programming Systems</span>
+                        <span class="chip"><b>COS 126</b> · Computer Science</span>
+                        <span class="chip"><b>ORF 309</b> · Probability &amp; Stochastic Systems</span>
+                        <span class="chip"><b>ECO 310</b> · Microeconomic Theory</span>
+                        <span class="chip"><b>ECE 201</b> · Information Systems</span>
+                        <span class="chip"><b>ECE 206</b> · Contemporary Logic Design</span>
+                        <span class="chip"><b>ECE 203</b> · Electronic Circuit Design</span>
+                        <span class="chip"><b>ECE 304</b> · Devices to ICs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section" style="padding-top: 0;">
+            <div class="cta-band reveal">
+                <h2>See what I've built</h2>
+                <p>Take a look at the projects I've shipped.</p>
+                <div class="hero-cta" style="justify-content: center;">
+                    <a class="btn btn-primary" href="projects.html">View projects</a>
+                    <a class="btn btn-outline" href="Calvin_Andoh_Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span class="muted">© <span id="year">2026</span> Calvin Andoh · Built with care.</span>
+            <div class="footer-socials">
+                <a href="https://github.com/cfandoh123" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+                <a href="https://www.linkedin.com/in/calvin-andoh-7a83481b5/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+                <a href="mailto:cfandoh123@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
