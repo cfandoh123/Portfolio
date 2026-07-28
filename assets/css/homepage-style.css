@@ -110,27 +110,6 @@ html, body {
     transition-duration: 0.5s;
 }
 
-#heart-link, #heart-link-hamburger {
-    line-height: 1;
-    text-decoration: none;
-    transition-duration: 0.3s;
-}
-
-#heart-link {
-    font-size: 14pt;
-}
-
-.menu-experience-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#heart-link-hamburger {
-    margin-left: 12px;
-    font-size: 16pt;
-}
-
 #hamburger-icon {
     display: none;
 }
@@ -375,10 +354,6 @@ html, body {
         font-size: 20pt;
     }
 
-    #heart-link {
-        font-size: 20pt;
-    }
-
     #homepage p {
         font-size: 52pt;
     }
@@ -426,10 +401,6 @@ html, body {
         width: 100%;
         opacity: 1;
         transition-duration: 0.5s;
-    }
-
-    #heart-link:hover, #heart-link-hamburger:hover {
-        transform: scale(1.3);
     }
 }
 
