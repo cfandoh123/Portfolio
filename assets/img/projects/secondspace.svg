@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-label="SecondSpace AI">
+  <defs>
+    <linearGradient id="ss-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b1f26"/>
+      <stop offset="100%" stop-color="#0e1013"/>
+    </linearGradient>
+    <radialGradient id="ss-glow" cx="0.72" cy="0.8" r="0.65">
+      <stop offset="0%" stop-color="#fbbf47" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#fbbf47" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ss-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fb8c3c"/>
+      <stop offset="100%" stop-color="#fbbf47"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#ss-bg)"/>
+  <rect width="1600" height="1000" fill="url(#ss-glow)"/>
+
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2">
+    <path d="M1180 300 L1330 390 L1330 570 L1180 660 L1030 570 L1030 390 Z"/>
+    <path d="M1180 300 L1180 660 M1030 390 L1330 570 M1330 390 L1030 570"/>
+  </g>
+  <g fill="url(#ss-accent)">
+    <circle cx="1180" cy="300" r="16"/><circle cx="1330" cy="390" r="16"/><circle cx="1330" cy="570" r="16"/>
+    <circle cx="1180" cy="660" r="16"/><circle cx="1030" cy="570" r="16"/><circle cx="1030" cy="390" r="16"/>
+    <circle cx="1180" cy="480" r="24"/>
+  </g>
+
+  <g transform="translate(120 300)">
+    <rect x="0" y="0" width="64" height="4" rx="2" fill="url(#ss-accent)"/>
+    <text x="88" y="10" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="26" letter-spacing="4" fill="#fb8c3c">PYTHON · SLACK API</text>
+
+    <text y="150" font-family="'Quicksand', 'Inter', system-ui, sans-serif" font-weight="700" font-size="118" fill="#ecebe8">SecondSpace</text>
+    <text y="278" font-family="'Quicksand', 'Inter', system-ui, sans-serif" font-weight="700" font-size="118" fill="url(#ss-accent)">AI</text>
+
+    <text y="360" font-family="'Inter', system-ui, sans-serif" font-size="34" fill="#9aa1ab">A Slack bot that matches coworkers and books the coffee chat.</text>
+  </g>
+
+  <g transform="translate(120 800)" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" fill="#9aa1ab">
+    <g>
+      <rect x="0" y="-30" width="220" height="52" rx="26" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="34" y="4">/interests</text>
+    </g>
+    <g transform="translate(240 0)">
+      <rect x="0" y="-30" width="252" height="52" rx="26" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="34" y="4">/find_match</text>
+    </g>
+    <g transform="translate(512 0)">
+      <rect x="0" y="-30" width="332" height="52" rx="26" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="34" y="4">Google Calendar</text>
+    </g>
+  </g>
+</svg>

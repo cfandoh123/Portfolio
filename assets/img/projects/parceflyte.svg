@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-label="ParceFlyte">
+  <defs>
+    <linearGradient id="pf-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b1f26"/>
+      <stop offset="100%" stop-color="#0e1013"/>
+    </linearGradient>
+    <radialGradient id="pf-glow" cx="0.8" cy="0.22" r="0.6">
+      <stop offset="0%" stop-color="#fb8c3c" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#fb8c3c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pf-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fb8c3c"/>
+      <stop offset="100%" stop-color="#fbbf47"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#pf-bg)"/>
+  <rect width="1600" height="1000" fill="url(#pf-glow)"/>
+
+  <!-- route arc between two nodes -->
+  <g transform="translate(1000 460)">
+    <path d="M40 180 Q170 -20 320 120" fill="none" stroke="url(#pf-accent)" stroke-width="4" stroke-dasharray="14 12" stroke-linecap="round"/>
+    <circle cx="40" cy="180" r="18" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+    <circle cx="40" cy="180" r="7" fill="#fb8c3c"/>
+    <circle cx="320" cy="120" r="18" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+    <circle cx="320" cy="120" r="7" fill="#fbbf47"/>
+    <g transform="translate(150 24) rotate(-14)">
+      <rect x="-38" y="-30" width="76" height="60" rx="8" fill="#ffffff" fill-opacity="0.09" stroke="#ffffff" stroke-opacity="0.28" stroke-width="3"/>
+      <path d="M-38 -8H38M0 -30V30" stroke="#ffffff" stroke-opacity="0.28" stroke-width="3"/>
+    </g>
+  </g>
+
+  <g transform="translate(120 300)">
+    <rect x="0" y="0" width="64" height="4" rx="2" fill="url(#pf-accent)"/>
+    <text x="88" y="10" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="26" letter-spacing="4" fill="#fb8c3c">NEXT.JS · MARKETPLACE</text>
+
+    <text y="150" font-family="'Quicksand', 'Inter', system-ui, sans-serif" font-weight="700" font-size="118" fill="#ecebe8">Parce<tspan fill="url(#pf-accent)">Flyte</tspan></text>
+
+    <text y="242" font-family="'Inter', system-ui, sans-serif" font-size="34" fill="#9aa1ab">Senders matched to travellers already flying the route.</text>
+  </g>
+
+  <g transform="translate(120 800)" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" fill="#9aa1ab">
+    <g>
+      <rect x="0" y="-30" width="196" height="52" rx="26" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="34" y="4">Matching</text>
+    </g>
+    <g transform="translate(216 0)">
+      <rect x="0" y="-30" width="132" height="52" rx="26" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="34" y="4">KYC</text>
+    </g>
+    <g transform="translate(368 0)">
+      <rect x="0" y="-30" width="256" height="52" rx="26" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="34" y="4">Negotiation</text>
+    </g>
+    <g transform="translate(644 0)">
+      <rect x="0" y="-30" width="272" height="52" rx="26" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+      <text x="34" y="4">Admin panel</text>
+    </g>
+  </g>
+</svg>

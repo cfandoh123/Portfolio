@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects · Calvin Andoh</title>
-    <meta name="description" content="Projects by Calvin Andoh — Canine AI, MigrAid, ParceFlyte and FraudGuard. On-device ML, React platforms and mobile apps.">
+    <meta name="description" content="Projects by Calvin Andoh — Tech4Good, quant pricing engines, radar ML research, Canine AI, MigrAid, ParceFlyte and FraudGuard.">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon_svg.svg">
     <link rel="alternate icon" href="assets/img/favicon/favicon1_ico.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Quicksand:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/eggs.css">
     <script>
         (function () {
             document.documentElement.classList.add("js");
@@ -56,6 +57,122 @@
 
         <section class="container section" style="padding-top: 44px;">
             <div class="project-grid">
+                <!-- Tech4Good -->
+                <article class="project-card reveal">
+                    <a class="project-thumb" href="https://tech4good.live" target="_blank" rel="noopener">
+                        <img src="assets/img/projects/tech4good.png" alt="Tech4Good">
+                    </a>
+                    <div class="project-body">
+                        <div class="project-top"><span class="project-name">Tech4Good</span><span class="project-date">Jul 2026</span></div>
+                        <p class="project-desc">An initiative I founded to turn technical talent in Ghana into ethical livelihoods — a bootcamp, a mentor network and a free Python warm-up course with an in-browser lesson runner. I built the site, the auth and profile layer on Supabase, and the six student project demos it ships with.</p>
+                        <div class="project-tags"><span class="tag">Initiative</span><span class="tag">Supabase</span><span class="tag">JavaScript</span></div>
+                        <div class="project-links">
+                            <a href="https://tech4good.live" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live site
+                            </a>
+                            <a href="https://github.com/cfandoh123/tech4good" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+                                View code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Equity Option Pricing Engine -->
+                <article class="project-card reveal">
+                    <a class="project-thumb" href="https://github.com/cfandoh123/equity-option-pricer" target="_blank" rel="noopener">
+                        <img src="assets/img/projects/equity-option-pricer.png" alt="Equity Option Pricing Engine">
+                    </a>
+                    <div class="project-body">
+                        <div class="project-top"><span class="project-name">Equity Option Pricer</span><span class="project-date">Jul 2026</span></div>
+                        <p class="project-desc">A multi-method option pricing library where eight independent methods — Black-Scholes, Heston, three binomial lattices, a Crank-Nicolson PDE solver and Monte-Carlo — all have to agree. Matches QuantLib to six decimals, plus analytic Greeks, an implied-vol solver and a Streamlit dashboard.</p>
+                        <div class="project-tags"><span class="tag">Python</span><span class="tag">Quant Finance</span><span class="tag">Streamlit</span></div>
+                        <div class="project-links">
+                            <a href="https://github.com/cfandoh123/equity-option-pricer" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+                                View code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Delta-Hedging Simulator -->
+                <article class="project-card reveal">
+                    <a class="project-thumb" href="https://cfandoh123.github.io/delta-hedging-simulator/" target="_blank" rel="noopener">
+                        <img src="assets/img/projects/delta-hedging.png" alt="Discrete Delta-Hedging Simulator">
+                    </a>
+                    <div class="project-body">
+                        <div class="project-top"><span class="project-name">Delta-Hedging Simulator</span><span class="project-date">Jul 2026</span></div>
+                        <p class="project-desc">A Monte-Carlo lab for the P&amp;L of a discretely rehedged option position, benchmarked against Derman &amp; Kamal's <em>"When You Cannot Hedge Continuously."</em> Simulates 50,000 price paths and shows the replication error shrinking like 1/√n, matching the closed-form result. Runs entirely in the browser.</p>
+                        <div class="project-tags"><span class="tag">Monte Carlo</span><span class="tag">Derivatives</span><span class="tag">JavaScript</span></div>
+                        <div class="project-links">
+                            <a href="https://cfandoh123.github.io/delta-hedging-simulator/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live demo
+                            </a>
+                            <a href="https://github.com/cfandoh123/delta-hedging-simulator" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+                                View code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Radar Shape Classification -->
+                <article class="project-card reveal">
+                    <a class="project-thumb" href="https://github.com/cfandoh123/ECE-399-Independent-Work" target="_blank" rel="noopener">
+                        <img src="assets/img/projects/radar-cnn.png" alt="FMCW radar shape classification">
+                    </a>
+                    <div class="project-body">
+                        <div class="project-top"><span class="project-name">Radar Shape Classification</span><span class="project-date">Apr 2026</span></div>
+                        <p class="project-desc">My junior independent work at Princeton: a CNN that identifies an object's shape from its FMCW radar range-angle heatmap. I generate 2,160 synthetic heatmaps per antenna configuration in MATLAB, train in PyTorch, and run inference on real CAD objects by pushing their STL through the same simulation model.</p>
+                        <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">MATLAB</span><span class="tag">Signal Processing</span></div>
+                        <div class="project-links">
+                            <a href="https://github.com/cfandoh123/ECE-399-Independent-Work" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+                                View code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Princeton Esports -->
+                <article class="project-card reveal">
+                    <a class="project-thumb" href="https://github.com/cfandoh123/Princeton-Esports" target="_blank" rel="noopener">
+                        <img src="assets/img/projects/princeton-esports.svg" alt="Princeton Esports">
+                    </a>
+                    <div class="project-body">
+                        <div class="project-top"><span class="project-name">Princeton Esports</span><span class="project-date">Apr 2026</span></div>
+                        <p class="project-desc">A matchmaking and community platform for Princeton's competitive gaming scene, built twice — a React web MVP and a native SwiftUI app sharing the same data model — with per-game leaderboards, availability heat maps, tournaments and chat.</p>
+                        <div class="project-tags"><span class="tag">SwiftUI</span><span class="tag">React</span><span class="tag">MVVM</span></div>
+                        <div class="project-links">
+                            <a href="https://github.com/cfandoh123/Princeton-Esports" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+                                View code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SecondSpace AI -->
+                <article class="project-card reveal">
+                    <a class="project-thumb" href="https://github.com/cfandoh123/SecondSpaceAI" target="_blank" rel="noopener">
+                        <img src="assets/img/projects/secondspace.svg" alt="SecondSpace AI">
+                    </a>
+                    <div class="project-body">
+                        <div class="project-top"><span class="project-name">SecondSpace AI</span><span class="project-date">Jul 2025</span></div>
+                        <p class="project-desc">A Slack bot for workplace connection: teammates register their interests, the bot finds the closest match and then negotiates a meeting time against both Google Calendars — turning "we should grab coffee sometime" into an actual event link.</p>
+                        <div class="project-tags"><span class="tag">Python</span><span class="tag">Slack API</span><span class="tag">Google Calendar</span></div>
+                        <div class="project-links">
+                            <a href="https://github.com/cfandoh123/SecondSpaceAI" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+                                View code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Canine AI -->
                 <article class="project-card reveal">
                     <a class="project-thumb" href="https://github.com/cfandoh123/CanineAI" target="_blank" rel="noopener">
@@ -63,7 +180,7 @@
                     </a>
                     <div class="project-body">
                         <div class="project-top"><span class="project-name">Canine AI</span><span class="project-date">Jul 2025</span></div>
-                        <p class="project-desc">A Flutter mobile app that uses an on-device ML model to identify dog breeds from your photos — with top-3 confidence scores, fun facts, a prediction history, a dog-news feed, dark mode and social sharing.</p>
+                        <p class="project-desc">A Flutter mobile app that uses an on-device ML model to identify dog breeds from your photos with top-3 confidence scores, fun facts, a prediction history, a dog-news feed, dark mode and social sharing.</p>
                         <div class="project-tags"><span class="tag">Flutter</span><span class="tag">C++</span><span class="tag">On-device ML</span></div>
                         <div class="project-links">
                             <a href="https://github.com/cfandoh123/CanineAI" target="_blank" rel="noopener">
@@ -81,7 +198,7 @@
                     </a>
                     <div class="project-body">
                         <div class="project-top"><span class="project-name">MigrAid</span><span class="project-date">Jul 2025</span></div>
-                        <p class="project-desc">A resource navigator helping immigrants, refugees and undocumented individuals access legal, healthcare, food and shelter resources — with anonymous discovery, an advocate dashboard, voice navigation, offline access and end-to-end encryption.</p>
+                        <p class="project-desc">A resource navigator helping immigrants, refugees and undocumented individuals access legal, healthcare, food and shelter resources.</p>
                         <div class="project-tags"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Encryption</span></div>
                         <div class="project-links">
                             <a href="https://github.com/cfandoh123/MigrAid" target="_blank" rel="noopener">
@@ -95,11 +212,11 @@
                 <!-- ParceFlyte -->
                 <article class="project-card reveal">
                     <a class="project-thumb" href="https://github.com/cfandoh123/ParceFlyte" target="_blank" rel="noopener">
-                        <img src="assets/img/projects/parceflyte.png" alt="ParceFlyte">
+                        <img src="assets/img/projects/parceflyte.svg" alt="ParceFlyte">
                     </a>
                     <div class="project-body">
                         <div class="project-top"><span class="project-name">ParceFlyte</span><span class="project-date">Oct 2023</span></div>
-                        <p class="project-desc">A secure peer-to-peer parcel delivery platform connecting senders with trusted travelers who deliver packages along their routes — featuring intelligent matching, KYC/verification, fee negotiation and an admin dashboard for compliance and risk.</p>
+                        <p class="project-desc">A secure peer-to-peer parcel delivery platform connecting senders with trusted travelers who deliver packages along their routes, featuring intelligent matching, KYC/verification, fee negotiation and an admin dashboard for compliance and risk.</p>
                         <div class="project-tags"><span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">Marketplace</span></div>
                         <div class="project-links">
                             <a href="https://github.com/cfandoh123/ParceFlyte" target="_blank" rel="noopener">
@@ -113,11 +230,11 @@
                 <!-- FraudGuard -->
                 <article class="project-card reveal">
                     <a class="project-thumb" href="https://github.com/cfandoh123/FraudGuard" target="_blank" rel="noopener">
-                        <img src="assets/img/projects/fraudguard.png" alt="FraudGuard">
+                        <img src="assets/img/projects/fraudguard.svg" alt="FraudGuard">
                     </a>
                     <div class="project-body">
                         <div class="project-top"><span class="project-name">FraudGuard</span><span class="project-date">May 2024</span></div>
-                        <p class="project-desc">An Android app that detects fraudulent credit-card transactions using machine learning — combining local on-device analysis with secure remote processing to deliver real-time fraud detection while preserving user privacy.</p>
+                        <p class="project-desc">An Android app that detects fraudulent credit-card transactions using machine learning, combining local on-device analysis with secure remote processing to deliver real-time fraud detection while preserving user privacy.</p>
                         <div class="project-tags"><span class="tag">Java</span><span class="tag">HTML</span><span class="tag">Machine Learning</span></div>
                         <div class="project-links">
                             <a href="https://github.com/cfandoh123/FraudGuard" target="_blank" rel="noopener">
@@ -153,5 +270,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/eggs.js"></script>
 </body>
 </html>
