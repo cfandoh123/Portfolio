@@ -353,6 +353,21 @@ body::before {
 .project-links a:hover { color: var(--accent); }
 .project-links svg { width: 17px; height: 17px; }
 
+/* ---------- Writing / posts ---------- */
+.post-card {
+    display: flex; flex-direction: column; height: 100%;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+.post-date { font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted); }
+.post-title { font-size: 1.25rem; letter-spacing: -0.01em; margin: 12px 0 10px; }
+.post-excerpt { color: var(--text-muted); font-size: 0.96rem; margin: 0 0 20px; }
+.post-more { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 600; font-size: 0.9rem; transition: gap 0.2s ease; }
+.post-card:hover .post-more { gap: 10px; }
+.post-more svg { width: 15px; height: 15px; }
+
 /* ---------- About ---------- */
 .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
 .about-photo { position: relative; }
@@ -455,4 +470,5 @@ body::before {
     * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
     .reveal { opacity: 1; transform: none; }
 }
+
 
