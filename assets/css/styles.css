@@ -472,3 +472,128 @@ body::before {
 }
 
 
+
+/* ---------- Demo video: play badge + modal player ---------- */
+/* The video thumb is a <button>, so strip the UA button styling and let it
+   inherit the same box as the <a class="project-thumb"> cards around it. */
+button.project-thumb {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.play-badge {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(180deg, rgba(10, 8, 6, 0.05), rgba(10, 8, 6, 0.42));
+    transition: background 0.25s ease;
+}
+
+.play-badge span {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 6px 22px rgba(20, 16, 12, 0.28);
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.play-badge svg { width: 22px; height: 22px; margin-left: 3px; fill: #1b1712; }
+.project-card:hover .play-badge { background: linear-gradient(180deg, rgba(10, 8, 6, 0.02), rgba(10, 8, 6, 0.3)); }
+.project-card:hover .play-badge span { transform: scale(1.09); }
+
+.play-duration {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(10, 8, 6, 0.72);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+}
+
+.vid-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9990;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(8, 6, 5, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.vid-modal.open { display: flex; }
+
+.vid-modal-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: vid-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes vid-in {
+    from { transform: scale(0.97); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+/* Portrait source: bound by viewport height, not width. */
+.vid-modal video {
+    display: block;
+    max-height: 82vh;
+    max-width: 100%;
+    width: auto;
+    border-radius: var(--radius);
+    background: #000;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
+.vid-modal-cap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.86rem;
+}
+
+.vid-modal-cap b { color: #fff; font-weight: 600; }
+
+.vid-modal-close {
+    background: none;
+    border: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    flex: none;
+}
+
+.vid-modal-close:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
+
+@media (prefers-reduced-motion: reduce) {
+    .vid-modal-panel { animation: none; }
+    .play-badge span, .project-card:hover .play-badge span { transition: none; transform: none; }
+}
+
+@media (max-width: 620px) {
+    .vid-modal { padding: 14px; }
+    .vid-modal video { max-height: 74vh; }
+}
