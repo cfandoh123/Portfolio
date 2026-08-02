@@ -357,13 +357,34 @@ body::before {
 .post-card {
     display: flex; flex-direction: column; height: 100%;
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-sm);
+    border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+
+/* Cover image sits full-bleed above the body, so the padding lives on
+   .post-body rather than the card itself. */
+.post-cover { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--bg-alt); flex: none; }
+/* Portrait sources are common here, so bias the crop below centre — it keeps
+   faces and any burned-in caption in frame. Override per card if needed. */
+.post-cover img { width: 100%; height: 100%; object-fit: cover; object-position: center 66%; transition: transform 0.5s ease; }
+.post-card:hover .post-cover img { transform: scale(1.05); }
+
+/* Fallback until a photo exists for a given post. */
+.post-cover.is-placeholder { display: grid; place-items: center; background: var(--gradient); }
+.post-cover.is-placeholder::after {
+    content: "\201C";
+    font-family: var(--font-display);
+    font-size: 8rem;
+    line-height: 1;
+    color: #fff;
+    opacity: 0.32;
+    transform: translateY(0.16em);
+}
+
+.post-body { display: flex; flex-direction: column; flex: 1; padding: 20px 24px 24px; }
 .post-date { font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted); }
-.post-title { font-size: 1.25rem; letter-spacing: -0.01em; margin: 12px 0 10px; }
-.post-excerpt { color: var(--text-muted); font-size: 0.96rem; margin: 0 0 20px; }
+.post-title { font-size: 1.25rem; letter-spacing: -0.01em; margin: 10px 0 18px; }
 .post-more { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 600; font-size: 0.9rem; transition: gap 0.2s ease; }
 .post-card:hover .post-more { gap: 10px; }
 .post-more svg { width: 15px; height: 15px; }

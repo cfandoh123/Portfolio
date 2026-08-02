@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="QuantCap">
+  <defs>
+    <linearGradient id="qc-tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d2a38"/>
+      <stop offset="100%" stop-color="#0e1620"/>
+    </linearGradient>
+    <linearGradient id="qc-tail" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f2711c"/>
+      <stop offset="100%" stop-color="#f5a623"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="15" fill="url(#qc-tile)"/>
+
+  <g fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round">
+    <!-- Q -->
+    <circle cx="18" cy="30" r="11"/>
+    <!-- C, opening to the right -->
+    <path d="M54.4 22.3 A11 11 0 1 0 54.4 37.7"/>
+  </g>
+
+  <!-- Q's tail in the site accent: crosses the ring at the lower right,
+       which also reads as an upward tick when the mark is scaled up -->
+  <path d="M23.2 35.2 L30.4 42.4" fill="none" stroke="url(#qc-tail)"
+        stroke-width="4.6" stroke-linecap="round"/>
+</svg>
