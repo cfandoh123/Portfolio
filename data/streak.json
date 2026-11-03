@@ -2,5 +2,7 @@
   "task": "Stop Bamba",
   "start": "2026-11-03",
   "months": 6,
-  "marks": {}
+  "marks": {
+    "2026-11-03": "done"
+  }
 }
