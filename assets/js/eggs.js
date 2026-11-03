@@ -463,6 +463,7 @@
             line("secrets/     .well-hidden", "dim");
         },
         pwd()  { line("/home/calvin/portfolio", "dim"); },
+        streak() { line("opening the streak board…", "dim"); setTimeout(() => { window.location.href = "streak.html"; }, 250); },
         cat(args) {
             if (!args.length) { line("usage: cat &lt;file&gt;", "dim"); return; }
             line("cat: " + escapeHtml(args[0]) + ": Permission denied", "err");

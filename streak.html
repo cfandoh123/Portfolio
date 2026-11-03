@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streak · Calvin Andoh</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon_svg.svg">
+    <link rel="alternate icon" href="assets/img/favicon/favicon1_ico.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Quicksand:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/streak.css">
+    <script>
+        (function () {
+            document.documentElement.classList.add("js");
+            try {
+                var t = localStorage.getItem("theme");
+                if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                document.documentElement.setAttribute("data-theme", t);
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <!-- ===== Header ===== -->
+    <header class="site-header">
+        <nav class="nav container">
+            <a class="brand" href="index.html">
+                <img src="assets/img/hero_graphics/solid/logo1.png" alt="Calvin Andoh logo">
+                <span>Calvin&nbsp;Andoh</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a class="navlink" href="index.html">Home</a>
+                <a class="navlink" href="experience.html">Experience</a>
+                <a class="navlink" href="projects.html">Projects</a>
+                <a class="navlink" href="writing.html">Writing</a>
+                <a class="navlink" href="about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="moon">🌙</span><span class="sun">☀️</span>
+                </button>
+                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container section-sm streak-page">
+        <div class="streak-head">
+            <div>
+                <span class="eyebrow">Consistency</span>
+                <h1 class="section-title" id="streak-task">Streak</h1>
+                <p class="section-lead" id="streak-range">Loading…</p>
+            </div>
+            <div class="streak-actions">
+                <button class="btn btn-primary" id="mark-btn" disabled>Mark today</button>
+                <button class="btn btn-ghost btn-sm" id="settings-btn" aria-label="Settings">⚙︎ Settings</button>
+            </div>
+        </div>
+
+        <div class="streak-status" id="status" role="status" aria-live="polite"></div>
+
+        <div class="streak-stats">
+            <div class="stat"><div class="stat-num" id="st-current">–</div><div class="stat-label">Current streak</div></div>
+            <div class="stat"><div class="stat-num" id="st-longest">–</div><div class="stat-label">Longest streak</div></div>
+            <div class="stat"><div class="stat-num" id="st-done">–</div><div class="stat-label">Days done</div></div>
+            <div class="stat"><div class="stat-num" id="st-left">–</div><div class="stat-label">Days left</div></div>
+        </div>
+
+        <div class="streak-progress"><div class="streak-progress-bar" id="progress"></div></div>
+
+        <div class="streak-months" id="months"></div>
+
+        <!-- ===== Settings panel ===== -->
+        <div class="streak-modal" id="settings" hidden>
+            <div class="streak-modal-card card">
+                <h2>Settings</h2>
+                <p class="muted small">The token stays in this browser only. The task, start date and marks are committed to <code>data/streak.json</code> so every device sees the same thing.</p>
+
+                <label class="field">
+                    <span>GitHub token <span class="muted">(fine-grained, Contents: read &amp; write on this repo)</span></span>
+                    <input type="password" id="in-token" autocomplete="off" placeholder="github_pat_…">
+                </label>
+                <label class="field">
+                    <span>Task</span>
+                    <input type="text" id="in-task" placeholder="e.g. LeetCode, 1 problem a day">
+                </label>
+                <div class="field-row">
+                    <label class="field">
+                        <span>Start date</span>
+                        <input type="date" id="in-start">
+                    </label>
+                    <label class="field">
+                        <span>Months</span>
+                        <input type="number" id="in-months" min="1" max="24" value="6">
+                    </label>
+                </div>
+
+                <div class="streak-modal-actions">
+                    <button class="btn btn-ghost btn-sm" id="settings-cancel">Cancel</button>
+                    <button class="btn btn-primary btn-sm" id="settings-save">Save</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span class="muted">© <span id="year">2026</span> Calvin Andoh · Built with care.</span>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/streak.js"></script>
+</body>
+</html>
