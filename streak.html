@@ -57,7 +57,8 @@
                 <p class="section-lead" id="streak-range">Loading…</p>
             </div>
             <div class="streak-actions">
-                <button class="btn btn-primary" id="mark-btn" disabled>Mark today</button>
+                <button class="btn btn-mark btn-mark-done" id="done-btn" disabled>✓ Done</button>
+                <button class="btn btn-mark btn-mark-missed" id="missed-btn" disabled>✗ Missed</button>
                 <button class="btn btn-ghost btn-sm" id="settings-btn" aria-label="Settings">⚙︎ Settings</button>
             </div>
         </div>
@@ -68,6 +69,7 @@
             <div class="stat"><div class="stat-num" id="st-current">–</div><div class="stat-label">Current streak</div></div>
             <div class="stat"><div class="stat-num" id="st-longest">–</div><div class="stat-label">Longest streak</div></div>
             <div class="stat"><div class="stat-num" id="st-done">–</div><div class="stat-label">Days done</div></div>
+            <div class="stat"><div class="stat-num" id="st-missed">–</div><div class="stat-label">Days missed</div></div>
             <div class="stat"><div class="stat-num" id="st-left">–</div><div class="stat-label">Days left</div></div>
         </div>
 
@@ -79,7 +81,7 @@
         <div class="streak-modal" id="settings" hidden>
             <div class="streak-modal-card card">
                 <h2>Settings</h2>
-                <p class="muted small">The token stays in this browser only. The task, start date and marks are committed to <code>data/streak.json</code> so every device sees the same thing.</p>
+                <p class="muted small">The token stays in this browser only. The task, start date and marks are committed to <code>data/streak.json</code> so every device sees the same thing. Each day you choose Done or Missed; days you never mark stay grey.</p>
 
                 <label class="field">
                     <span>GitHub token <span class="muted">(fine-grained, Contents: read &amp; write on this repo)</span></span>

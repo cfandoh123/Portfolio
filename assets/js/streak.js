@@ -13,14 +13,14 @@
 
     const $ = (id) => document.getElementById(id);
     const el = {
-        task: $("streak-task"), range: $("streak-range"), mark: $("mark-btn"), settingsBtn: $("settings-btn"),
+        task: $("streak-task"), range: $("streak-range"), doneBtn: $("done-btn"), missedBtn: $("missed-btn"), settingsBtn: $("settings-btn"),
         status: $("status"), months: $("months"), progress: $("progress"),
-        current: $("st-current"), longest: $("st-longest"), done: $("st-done"), left: $("st-left"),
+        current: $("st-current"), longest: $("st-longest"), done: $("st-done"), missed: $("st-missed"), left: $("st-left"),
         modal: $("settings"), inToken: $("in-token"), inTask: $("in-task"), inStart: $("in-start"), inMonths: $("in-months"),
         save: $("settings-save"), cancel: $("settings-cancel"), year: $("year")
     };
 
-    let state = { task: "", start: "", months: 6, days: [] };
+    let state = { task: "", start: "", months: 6, marks: {} };
     let sha = null;          // blob sha of the file on GitHub, needed for updates
     let busy = false;
 
@@ -43,14 +43,27 @@
         el.status.className = "streak-status" + (cls ? " " + cls : "");
     }
 
+    const isDate = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d);
     function normalise(obj) {
-        const days = Array.isArray(obj.days) ? obj.days.filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)) : [];
+        const marks = {};
+        if (obj.marks && typeof obj.marks === "object") {
+            Object.keys(obj.marks).forEach((d) => {
+                if (isDate(d) && (obj.marks[d] === "done" || obj.marks[d] === "missed")) marks[d] = obj.marks[d];
+            });
+        }
+        // legacy shape: a plain list of done days
+        if (Array.isArray(obj.days)) obj.days.forEach((d) => { if (isDate(d) && !marks[d]) marks[d] = "done"; });
         return {
             task: typeof obj.task === "string" ? obj.task : "",
             start: typeof obj.start === "string" ? obj.start : "",
             months: Number(obj.months) > 0 ? Number(obj.months) : 6,
-            days: Array.from(new Set(days)).sort()
+            marks: sortMarks(marks)
         };
+    }
+    function sortMarks(m) {
+        const out = {};
+        Object.keys(m).sort().forEach((k) => { out[k] = m[k]; });
+        return out;
     }
 
     /* ---------- GitHub I/O ---------- */
@@ -91,7 +104,7 @@
         if (res.status === 409 || res.status === 422) {
             // someone else (another device) wrote first: reload, merge marks, retry once
             const fresh = await load();
-            const merged = Object.assign({}, next, { days: Array.from(new Set(fresh.days.concat(next.days))).sort() });
+            const merged = Object.assign({}, next, { marks: sortMarks(Object.assign({}, fresh.marks, next.marks)) });
             body.content = b64encode(JSON.stringify(merged, null, 2) + "\n");
             body.sha = sha;
             const retry = await fetch(API, { method: "PUT", headers: headers(token), body: JSON.stringify(body) });
@@ -106,24 +119,26 @@
 
     /* ---------- stats ---------- */
     function computeStats() {
-        const set = new Set(state.days);
+        const marks = state.marks;
         const t = today();
         const start = state.start ? parse(state.start) : null;
         const end = start ? addDays(addMonths(start, state.months), -1) : null;
 
-        // current streak: count back from today, or from yesterday if today isn't marked yet
+        // current streak: consecutive "done" days ending today, or yesterday if today isn't decided yet
         let cursor = parse(t);
-        if (!set.has(t)) cursor = addDays(cursor, -1);
+        if (!marks[t]) cursor = addDays(cursor, -1);
         let current = 0;
-        while (set.has(iso(cursor))) { current++; cursor = addDays(cursor, -1); }
+        while (marks[iso(cursor)] === "done") { current++; cursor = addDays(cursor, -1); }
 
-        // longest run
+        // longest run of consecutive "done" days
+        const doneDays = Object.keys(marks).filter((d) => marks[d] === "done");
         let longest = 0, run = 0, prev = null;
-        state.days.forEach((d) => {
+        doneDays.forEach((d) => {
             run = prev && iso(addDays(parse(prev), 1)) === d ? run + 1 : 1;
             longest = Math.max(longest, run);
             prev = d;
         });
+        const missed = Object.keys(marks).filter((d) => marks[d] === "missed").length;
 
         let total = 0, left = 0, elapsed = 0;
         if (start && end) {
@@ -132,7 +147,7 @@
             elapsed = Math.min(total, Math.max(0, Math.round((now - start) / 86400000) + 1));
             left = Math.max(0, total - elapsed);
         }
-        return { current, longest, done: set.size, left, total, end };
+        return { current, longest, done: doneDays.length, missed, left, total, end };
     }
 
     /* ---------- render ---------- */
@@ -141,7 +156,7 @@
 
     function render() {
         const t = today();
-        const set = new Set(state.days);
+        const marks = state.marks;
         const hasPlan = !!state.start;
         const s = computeStats();
 
@@ -156,14 +171,14 @@
         el.current.textContent = s.current;
         el.longest.textContent = s.longest;
         el.done.textContent = s.done + (s.total ? " / " + s.total : "");
+        el.missed.textContent = s.missed;
         el.left.textContent = s.left;
         el.progress.style.width = s.total ? Math.round((s.done / s.total) * 100) + "%" : "0%";
 
-        const markedToday = set.has(t);
-        el.mark.textContent = markedToday ? "✓ Done today" : "Mark today";
-        el.mark.classList.toggle("btn-done", markedToday);
-        el.mark.classList.toggle("btn-primary", !markedToday);
-        el.mark.disabled = busy || !hasPlan || !getToken();
+        const verdict = marks[t];
+        el.doneBtn.classList.toggle("active", verdict === "done");
+        el.missedBtn.classList.toggle("active", verdict === "missed");
+        el.doneBtn.disabled = el.missedBtn.disabled = busy || !hasPlan || !getToken();
 
         el.months.innerHTML = "";
         if (!hasPlan) return;
@@ -188,8 +203,9 @@
                 if (date < start || date > end) cls.push("out");
                 else {
                     inRange++;
-                    if (set.has(key)) { cls.push("done"); doneInMonth++; }
-                    else if (key < t) cls.push("missed");
+                    if (marks[key] === "done") { cls.push("done"); doneInMonth++; }
+                    else if (marks[key] === "missed") cls.push("missed");
+                    else if (key < t) cls.push("pending");
                     else if (key > t) cls.push("future");
                 }
                 if (key === t) cls.push("today");
@@ -205,20 +221,21 @@
     }
 
     /* ---------- actions ---------- */
-    async function toggleToday() {
+    async function setToday(verdict) {
         if (busy) return;
         const t = today();
-        const set = new Set(state.days);
-        const undo = set.has(t);
-        if (undo && !confirm("Unmark today?")) return;
-        undo ? set.delete(t) : set.add(t);
+        const marks = Object.assign({}, state.marks);
+        const clearing = marks[t] === verdict;
+        if (clearing) delete marks[t]; else marks[t] = verdict;
 
-        const next = Object.assign({}, state, { days: Array.from(set).sort() });
+        const next = Object.assign({}, state, { marks: sortMarks(marks) });
         busy = true; render();
-        setStatus(undo ? "Removing today's mark…" : "Committing today's mark…");
+        setStatus(clearing ? "Clearing today's mark…" : "Committing today as " + verdict + "…");
         try {
-            state = await commit(next, (undo ? "streak: unmark " : "streak: mark ") + t);
-            setStatus(undo ? "Removed." : "Day " + state.days.length + " locked in. Nice.", "ok");
+            state = await commit(next, "streak: " + (clearing ? "clear " : verdict + " ") + t);
+            if (clearing) setStatus("Cleared.", "ok");
+            else if (verdict === "done") setStatus("Locked in. Nice.", "ok");
+            else setStatus("Recorded. Tomorrow is a new day.", "ok");
         } catch (e) {
             setStatus(e.message, "err");
         } finally {
@@ -266,7 +283,8 @@
     }
 
     /* ---------- boot ---------- */
-    el.mark.addEventListener("click", toggleToday);
+    el.doneBtn.addEventListener("click", () => setToday("done"));
+    el.missedBtn.addEventListener("click", () => setToday("missed"));
     el.settingsBtn.addEventListener("click", openSettings);
     el.cancel.addEventListener("click", closeSettings);
     el.save.addEventListener("click", saveSettings);
